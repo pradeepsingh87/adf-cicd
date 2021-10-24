@@ -63,7 +63,7 @@ resource "azurerm_data_factory" "psb-covid-reporting-adf" {
     account_name    = "pradeepsingh87"
     branch_name     = "main"
     git_url         = "https://github.com"
-    repository_name = "adf-automation"
+    repository_name = "adf-cicd"
     root_folder     = "src"
   }
   tags = {
@@ -95,14 +95,16 @@ resource "azurerm_data_factory_linked_service_data_lake_storage_gen2" "ls_adls_c
   # storage_account_key is not supported in provider version version = "=2.46.0"
 }
 
-resource "azurerm_data_factory_linked_service_web" "ls_https_worldwide_aggregate" {
-  name                = "ls_https_worldwide_aggregate"
-  resource_group_name = azurerm_resource_group.psb_rg.name
-  data_factory_name   = azurerm_data_factory.psb-covid-reporting-adf.name
-  authentication_type = "Anonymous"
-  url                 = "https://raw.githubusercontent.com/"
-  # integration_runtime_name = azurerm_data_factory.psb-covid-reporting-adf.name
-}
+## Terraform only supports a web table as of now . HTTPs end point is not supported 
+## Import this as ARM template after using ADF to create it 
+
+# resource "azurerm_data_factory_linked_service_web" "ls_https_worldwide_aggregate" {
+#   name                     = "ls_https_worldwide_aggregate"
+#   resource_group_name      = azurerm_resource_group.psb_rg.name
+#   data_factory_name        = azurerm_data_factory.psb-covid-reporting-adf.name
+#   authentication_type      = "Anonymous"
+#   url                      = "https://raw.githubusercontent.com/"
+# }
 
 
 # resource "azurerm_data_factory_dataset_delimited_text" "ds_population_raw_gz" {
