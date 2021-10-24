@@ -1,0 +1,22 @@
+{
+	"name": "ds_https_worldwide_aggregate",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_covidreporting_https",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "datasets/covid-19/main/data/worldwide-aggregate.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
