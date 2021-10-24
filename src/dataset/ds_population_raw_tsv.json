@@ -2,7 +2,7 @@
 	"name": "ds_population_raw_tsv",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_adls_covidreporting_dl",
+			"referenceName": "ls_adls_covidreportingdl",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

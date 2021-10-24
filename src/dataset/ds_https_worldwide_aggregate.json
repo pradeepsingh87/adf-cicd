@@ -2,7 +2,7 @@
 	"name": "ds_https_worldwide_aggregate",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_adls_covidreporting_https",
+			"referenceName": "ls_https_worldwide_aggregate",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

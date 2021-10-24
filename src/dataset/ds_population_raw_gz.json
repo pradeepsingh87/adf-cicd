@@ -2,7 +2,7 @@
 	"name": "ds_population_raw_gz",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_adls_covidreporting_blob",
+			"referenceName": "ls_ablob_covidreportingsa",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
